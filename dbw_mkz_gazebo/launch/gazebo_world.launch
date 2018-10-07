@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="world_name" default="$(find dbw_mkz_gazebo)/worlds/empty_world.world" />
+  <arg name="headless" default="false" />
+  <arg name="pause" default="false" />
+  <arg name="use_camera_control" default="false" />
+  <arg name="physics" default="ode"/>
+
+  <param name="/use_sim_time" value="true" />
+
+  <!-- start gazebo server-->
+  <node unless="$(arg pause)" name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen"
+        args="-e $(arg physics) $(arg world_name)" />
+  <node     if="$(arg pause)" name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen"
+        args="-u -e $(arg physics) $(arg world_name)" />
+
+  <!-- start gazebo client -->
+  <group unless="$(arg headless)">
+    <arg unless="$(arg use_camera_control)" name="gzclient_args" value="" />
+    <arg     if="$(arg use_camera_control)" name="gzclient_args" value="-g libdbw_mkz_gazebo_camera.so" />
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" args="$(arg gzclient_args)" output="screen"/>
+  </group>
+
+</launch>

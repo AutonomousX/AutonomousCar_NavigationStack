@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find dbw_mkz_gazebo)/launch/dbw_mkz_gazebo.launch" >
+    <arg name="use_camera_control" value="true" />
+    <arg name="world_name" value="$(find dbw_mkz_gazebo)/worlds/box_world.world" />
+    <arg name="sim_param_file" value="$(find dbw_mkz_gazebo)/yaml/default_sim_params.yaml" />
+  </include>
+
+  <!-- Joystick demo -->
+  <arg name="ignore" default="false"/>
+  <arg name="enable" default="true"/>
+  <arg name="count" default="false"/>
+  <arg name="svel" default="0.0"/>
+  <node ns="vehicle" pkg="dbw_mkz_joystick_demo" type="joystick_demo" name="joystick_demo" output="screen" >
+    <param name="ignore" value="$(arg ignore)" /> <!-- Ignore driver overrides -->
+    <param name="enable" value="$(arg enable)" /> <!-- Enable buttons -->
+    <param name="count" value="$(arg count)" /> <!-- Watchdog counter -->
+    <param name="svel" value="$(arg svel)" /> <!-- Steering velocity limit -->
+  </node>
+
+  <!-- Joystick driver -->
+  <arg name="dev" default="/dev/input/js0"/>
+  <node pkg="joy" type="joy_node" name="joy_node" output="screen" >
+    <param name="dev" value="$(arg dev)" />
+    <param name="deadzone" value="0.01" />
+    <param name="autorepeat_rate" value="50.0" />
+  </node>
+
+  <include file="$(find dbw_mkz_can)/launch/dbw.launch" >
+    <arg name="live" value="false" />
+    <arg name="load_urdf" value="false" />
+    <arg name="can_ns" value="can_bus_dbw" />
+  </include>
+
+</launch>

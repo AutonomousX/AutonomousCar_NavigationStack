@@ -1,0 +1,16 @@
+- fusion:
+    x: 0.0
+    y: 3.0
+    z: 0.0
+    yaw: 0.0
+    model: fusion
+    color: {r: 0.8, g: 0.1, b: 0.0}
+    pub_tf: true
+- mkz:
+    x: 0.0
+    y: -3.0
+    z: 0.0
+    yaw: 0.0
+    model: mkz
+    color: green
+    pub_tf: true

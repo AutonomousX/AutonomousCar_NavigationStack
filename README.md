@@ -1,3 +1,3 @@
 # AutuonomousCar_NavigationStack
 
-The project was build as a part of Advanced Robotics(CSE 668) course at UB. 
+This project was developed as a part of CSE668 Advanced Robotics course taken under prof. Nils Napp.

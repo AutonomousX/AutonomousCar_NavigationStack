@@ -2,6 +2,12 @@
 
 This project was developed as a part of CSE668 Advanced Robotics course taken under prof. Nils Napp.
 
+![proj1](https://user-images.githubusercontent.com/34932185/51647668-b919e100-1f4b-11e9-90dd-e26e08419bf5.PNG)
+
+![proj2](https://user-images.githubusercontent.com/34932185/51647671-bdde9500-1f4b-11e9-9569-7a288efe572b.PNG)
+
+![proj3](https://user-images.githubusercontent.com/34932185/51647678-c3d47600-1f4b-11e9-9db4-678e762ec880.PNG)
+
 # Summary
 
 UB’s Self Driving car is developed by DataSpeed and AutonomouStuff. DataSpeed not only
@@ -64,4 +70,5 @@ Pointcloud to Laserscan).
 5. Run the /hector_slam/hector_mapping/launch/mapping_defaut.launch file
 6. Drive the car around in gazebo and map would be formed in the rviz.
 7. See the link below to video illustrating the above steps.
+
 https://drive.google.com/file/d/10rXFgINGAYj2-lKGeZGJ0qQ3QYkR9gU_/view?usp=sharing

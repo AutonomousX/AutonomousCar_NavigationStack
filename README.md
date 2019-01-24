@@ -57,7 +57,8 @@ poles for the road, so that can serve as features to keep the car on the road.
 
 # Future Work 
 Now that we have done mapping, we can go for path planning using navigation stack.
-We can further improve the gazebo world, by building the pavements along the road and try to
+We can further improve the gazebo world, by building the pavements along the road in order
+to extract better features for the localization and try to
 navigate the car from one point to another, without going off the road.
 
 # How to run

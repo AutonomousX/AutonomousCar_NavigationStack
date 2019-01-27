@@ -66,10 +66,11 @@ navigate the car from one point to another, without going off the road.
 1. Run the dbw_mkz_gazebo/launch/closed_joy_ub.launch
 2. Build the but_velodyne_package.
 3. Run the laserscan_node.launch file from 'but_velodyne_proc' package(to convert
-Pointcloud to Laserscan).
+   Pointcloud to Laserscan).
 4. Build the hector_slam package
 5. Run the /hector_slam/hector_mapping/launch/mapping_defaut.launch file
-6. Drive the car around in gazebo and map would be formed in the rviz.
+6. Drive the car around in gazebo and occupancy grid localizing the car would be formed in the rviz 
+   as a result of slam algorithm
 7. See the link below to video illustrating the above steps.
 
 https://drive.google.com/file/d/10rXFgINGAYj2-lKGeZGJ0qQ3QYkR9gU_/view?usp=sharing
